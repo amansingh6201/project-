@@ -1,15 +1,15 @@
-import { create } from 'zustand';
+﻿import { create } from 'zustand'
 
-const useStore = create((set) => ({
+interface StoreState {
+  user: any | null
+  setUser: (user: any) => void
+  clearUser: () => void
+}
+
+const useStore = create<StoreState>((set) => ({
   user: null,
-  watchlist: [],
-  continueWatching: [],
   setUser: (user) => set({ user }),
-  addToWatchlist: (item) => set((state) => ({ watchlist: [...state.watchlist, item] })),
-  removeFromWatchlist: (id) => set((state) => ({ 
-    watchlist: state.watchlist.filter(item => item.id !== id) 
-  })),
-  setContinueWatching: (items) => set({ continueWatching: items }),
-}));
+  clearUser: () => set({ user: null }),
+}))
 
-export default useStore;
+export default useStore
