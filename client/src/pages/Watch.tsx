@@ -94,7 +94,7 @@ export default function Watch() {
           file: {
             forceHLS: true,
           }
-        }}
+        } as any}
       />
 
       {/* Controls Overlay */}

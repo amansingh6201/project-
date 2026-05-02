@@ -6,7 +6,7 @@ export default function CustomerLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const setUser = useStore((state) => state.setUser);
+  const setUser = useStore((state: any) => state.setUser);
 
   const handleLogin = (e) => {
     e.preventDefault();

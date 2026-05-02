@@ -7,7 +7,7 @@ export default function AdminLogin() {
   const [password, setPassword] = useState('');
   const [secretKey, setSecretKey] = useState('');
   const navigate = useNavigate();
-  const setUser = useStore((state) => state.setUser);
+  const setUser = useStore((state: any) => state.setUser);
 
   const handleLogin = (e) => {
     e.preventDefault();

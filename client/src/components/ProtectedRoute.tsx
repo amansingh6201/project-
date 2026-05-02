@@ -1,8 +1,8 @@
 import { Navigate } from 'react-router-dom';
-import useStore from '../../store/useStore';
+import useStore from '../store/useStore';
 
-export default function ProtectedRoute({ children, allowedRoles }) {
-  const user = useStore((state) => state.user);
+export default function ProtectedRoute({ children, allowedRoles }: any) {
+  const user = useStore((state: any) => state.user);
 
   if (!user) {
     return <Navigate to="/login" replace />;
